@@ -49,6 +49,7 @@ p {
   font-size: 1rem; /* 16px */
   letter-spacing: 0.12rem;
   color: var(--black);
+  margin: 0;
 }
 
 input {
