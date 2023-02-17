@@ -1,0 +1,50 @@
+/* PT Serif and Manrope fonts */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=PT+Serif:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Colors */
+:root {
+  --black: #423b35;
+  --ecru: #f4f0e6;
+  --blue: #b9cdd2;
+  --brown: #ba885c;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "PT Serif", serif;
+  font-weight: 500;
+  color: var(--black);
+}
+
+h1 {
+  font-size: 5.063rem; /* 81px */
+}
+
+h2 {
+  font-size: 3.375rem; /* 54px */
+}
+
+h3 {
+  font-size: 2.25rem; /* 36px */
+}
+
+h4 {
+  font-size: 1.5rem; /* 24px */
+}
+
+p {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  letter-spacing: 0.12rem;
+  color: var(--black);
+}
