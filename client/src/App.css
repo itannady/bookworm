@@ -1,17 +1,17 @@
 /* PT Serif and Manrope fonts */
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=PT+Serif:wght@400;700&display=swap");
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 /* Colors */
 :root {
-  --black: #423b35;
+  --black: #4f443b;
   --ecru: #f4f0e6;
   --blue: #b9cdd2;
   --brown: #ba885c;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--ecru);
 }
 
 /* Typography */
@@ -21,7 +21,7 @@ h3,
 h4,
 h5 {
   font-family: "PT Serif", serif;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--black);
 }
 
