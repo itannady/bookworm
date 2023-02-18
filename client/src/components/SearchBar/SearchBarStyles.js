@@ -4,6 +4,8 @@ import { FiSearch } from "react-icons/fi";
 export const SearchBarContainer = styled.form`
   width: 50%;
   position: relative;
+  display: flex;
+  justify-content: center;
 
   input {
     width: 100%;
