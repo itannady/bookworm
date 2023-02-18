@@ -13,7 +13,7 @@ const bookRoutes = require("./routes/bookRoutes");
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use("/books", bookRoutes);
+app.use("/", bookRoutes);
 
 // Connect to MongoDB
 mongoose.set("strictQuery", false);
