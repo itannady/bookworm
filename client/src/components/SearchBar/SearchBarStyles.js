@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FiSearch } from "react-icons/fi";
 
-export const SearchBarContainer = styled.div`
+export const SearchBarContainer = styled.form`
   width: 50%;
   position: relative;
 

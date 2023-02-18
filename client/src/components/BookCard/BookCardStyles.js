@@ -7,6 +7,7 @@ export const CardContainer = styled.div`
 
 export const BookCover = styled.div`
   width: 100%;
+
   img {
     border-radius: 5px;
     width: 200px;
