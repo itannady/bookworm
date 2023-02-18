@@ -8,7 +8,7 @@ const searchBooks = async (req, res, next) => {
   const { query } = req.params;
   try {
     const result = await axios.get(
-      `${BASE_URL}?q=intitle:${query}&key=${API_KEY}&maxResults=20`
+      `${BASE_URL}?q=:${query}&key=${API_KEY}&maxResults=10&printType=books`
     );
     const books = result.data.items.map((item) => {
       const book = item.volumeInfo;
@@ -28,4 +28,25 @@ const searchBooks = async (req, res, next) => {
   }
 };
 
+// Add book
+const addBook = async (req, res, next) => {
+  const { title, author } = req.body;
+  const library = await Book({
+    title,
+    author,
+  });
+  library
+    .save()
+    .then((data) => {
+      res.status(200).json(books);
+    })
+    .catch((error) => {
+      console.log(error);
+      res
+        .status(501)
+        .json({ message: "An error occurred while adding the book." });
+    });
+};
+
 exports.searchBooks = searchBooks;
+exports.addBook = addBook;
