@@ -3,7 +3,7 @@
 
 /* Colors */
 :root {
-  --black: #4f443b;
+  --black: #534a41;
   --ecru: #f4f0e6;
   --blue: #b9cdd2;
   --brown: #ba885c;
@@ -25,21 +25,21 @@ h3 {
 }
 
 h1 {
-  font-size: 5.063rem; /* 81px */
+  font-size: 4.768rem;
 }
 
 h2 {
-  font-size: 3.375rem; /* 54px */
+  font-size: 3.815rem;
 }
 
 h3 {
-  font-size: 2.25rem; /* 36px */
+  font-size: 3.052rem;
 }
 
 h4 {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.25rem;
   color: var(--black);
 }
 
