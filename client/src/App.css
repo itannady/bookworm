@@ -52,6 +52,15 @@ p {
   margin: 0;
 }
 
+.title {
+  font-weight: 600;
+}
+
+.author {
+  color: gray;
+  margin-top: 0.5rem;
+}
+
 input {
   font-family: "Manrope", sans-serif;
 }

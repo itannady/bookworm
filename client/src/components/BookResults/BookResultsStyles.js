@@ -1,16 +1,25 @@
 import styled from "styled-components";
 
-export const Row = styled.div`
+export const ResultContainer = styled.section`
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: pink;
+`;
+
+export const Row = styled.div`
+  margin: 0 5%;
+  max-width: 1100px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 0.5rem;
+  row-gap: 5rem;
 `;
 
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
 `;
 
 export const BookCover = styled.div`
@@ -18,7 +27,7 @@ export const BookCover = styled.div`
 
   img {
     border-radius: 5px;
-    width: 200px;
+    width: 150px;
     box-shadow: 11px 14px 32px #6b5e3d;
   }
 `;
