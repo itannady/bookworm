@@ -8,7 +8,7 @@ export const HeroContainer = styled.header`
 `;
 
 export const ContentWrapper = styled.header`
-  margin: 5%;
+  margin: 2% 5%;
   max-width: 1000px;
   display: flex;
   flex-direction: column;
