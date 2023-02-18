@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import axios from "axios";
-import BookCard from "./components/BookCard/BookCard";
+import BookResults from "./components/BookResults/BookResults";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -26,7 +26,7 @@ function App() {
     <>
       <Navbar />
       <Hero handleSearch={handleSearch} />
-      <BookCard books={books} />
+      <BookResults books={books} />
     </>
   );
 }
