@@ -4,7 +4,6 @@ export const ResultContainer = styled.section`
   width: 100vw;
   display: flex;
   justify-content: center;
-  background-color: pink;
 `;
 
 export const Row = styled.div`
@@ -19,7 +18,7 @@ export const Row = styled.div`
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
 `;
 
 export const BookCover = styled.div`
