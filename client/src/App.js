@@ -4,6 +4,7 @@ import axios from "axios";
 import BookResults from "./components/BookResults/BookResults";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
+import { ShelfImg } from "./components/Shelf/ShelfStyles";
 
 function App() {
   const API_URL = "http://localhost:5050";
@@ -28,6 +29,7 @@ function App() {
       <Navbar />
       <Hero handleSearch={handleSearch} />
       <BookResults books={books} />
+      <ShelfImg />
     </>
   );
 }
