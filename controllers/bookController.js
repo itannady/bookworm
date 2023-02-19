@@ -8,7 +8,7 @@ const searchBooks = async (req, res, next) => {
   const { query } = req.params;
   try {
     const result = await axios.get(
-      `${BASE_URL}?q=:${query}&key=${API_KEY}&maxResults=10&printType=books`
+      `${BASE_URL}?q=:${query}&key=${API_KEY}&maxResults=20&printType=books`
     );
     const books = result.data.items.map((item) => {
       const book = item.volumeInfo;
