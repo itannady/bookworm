@@ -13,27 +13,30 @@ export const ResultContainer = styled.section`
 export const Row = styled.div`
   position: absolute;
   bottom: -1rem;
-  margin: 0 5%;
+  /* margin: 0 5%; */
   width: 1000px;
   display: flex;
-
-  flex-wrap: nowrap;
-  /* transition: transform 0.3s ease-out;
-  transform: translateX(-${(props) => props.translate}px); */
-  overflow-x: hidden;
-  /* max-width: 1100px;z
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0.5rem
-  row-gap: 5rem; */
+  background-color: pink;
   z-index: 10;
+  transition: transform 300ms ease-in-out;
+  transform: translateX(0);
+  /* width: ${(props) => `${props.bookCount * 200}px`}; */
 `;
 
 export const CarouselWrapper = styled.div`
   display: flex;
-  flex: 0 0 20%;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(0);
+  /* flex: 0 0 20%; */
+  /* transition: transform 0.3s ease-in-out;
+  transform: translateX(0); */
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  max-width: 1000px;
+
+  padding: 10px;
+
+  background-color: aliceblue;
 `;
 
 export const CardContainer = styled.div`
@@ -43,7 +46,6 @@ export const CardContainer = styled.div`
   justify-content: flex-end;
   flex-shrink: 0;
   transition: opacity 0.5s ease;
-  cursor: pointer;
 `;
 
 export const BookCover = styled.div`
