@@ -14,11 +14,12 @@ export const Row = styled.div`
   position: absolute;
   bottom: -1rem;
   margin: 0 5%;
+  width: 1000px;
   display: flex;
-  flex: 0 0 auto;
-  gap: 2rem;
-  transition: transform 0.3s ease-out;
-  transform: translateX(-${(props) => props.translate}px);
+
+  flex-wrap: nowrap;
+  /* transition: transform 0.3s ease-out;
+  transform: translateX(-${(props) => props.translate}px); */
   overflow-x: hidden;
   /* max-width: 1100px;z
   display: grid;
@@ -28,7 +29,15 @@ export const Row = styled.div`
   z-index: 10;
 `;
 
+export const CarouselWrapper = styled.div`
+  display: flex;
+  flex: 0 0 20%;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+`;
+
 export const CardContainer = styled.div`
+  width: calc(1000px / 5);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -43,6 +52,7 @@ export const BookCover = styled.div`
   img {
     border-radius: 5px;
     width: 150px;
+    object-fit: contain;
     /* filter: drop-shadow(7px 0px 15px rgba(84, 68, 45, 0.621))
       drop-shadow(1px 3px 7px rgba(80, 57, 25, 0.427)); */
   }
