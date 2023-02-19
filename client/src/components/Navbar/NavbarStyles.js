@@ -15,3 +15,5 @@ export const NavWrapper = styled.nav`
 `;
 
 export const Logo = styled.div``;
+
+export const Library = styled.div``;

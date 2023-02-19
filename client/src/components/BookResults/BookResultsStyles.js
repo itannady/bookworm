@@ -40,9 +40,10 @@ export const BookCover = styled.div`
     border-radius: 5px;
     width: 170px;
     cursor: pointer;
-
-    filter: drop-shadow(4px 0px 5px rgba(84, 68, 45, 0.621))
-      drop-shadow(1px 5px 5px rgba(80, 57, 25, 0.427));
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
+      0 1px 3px 1px rgb(60 64 67 / 15%);
+    /* filter: drop-shadow(4px 0px 5px rgba(84, 68, 45, 0.621))
+      drop-shadow(1px 5px 5px rgba(80, 57, 25, 0.427)); */
   }
 `;
 

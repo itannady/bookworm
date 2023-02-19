@@ -5,6 +5,7 @@ import BookResults from "./components/BookResults/BookResults";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import { ShelfImg } from "./components/Shelf/ShelfStyles";
+import LibModal from "./components/LibModal/LibModal";
 
 function App() {
   const API_URL = "http://localhost:5050";
@@ -24,12 +25,19 @@ function App() {
       });
   };
 
+  // library modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar handleOpenModal={handleOpenModal} />
       <Hero handleSearch={handleSearch} />
       <BookResults books={books} />
       <ShelfImg />
+      <LibModal isOpen={isModalOpen} handleCloseModal={handleCloseModal} />
     </>
   );
 }
