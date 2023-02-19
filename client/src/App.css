@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--ecru);
+  overflow-x: hidden;
 }
 
 /* Typography */
@@ -63,4 +64,5 @@ p {
 
 input {
   font-family: "Manrope", sans-serif;
+  color: var(--black);
 }

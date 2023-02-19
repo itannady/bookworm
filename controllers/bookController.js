@@ -29,24 +29,24 @@ const searchBooks = async (req, res, next) => {
 };
 
 // Add book
-const addBook = async (req, res, next) => {
-  const { title, author } = req.body;
-  const library = await Book({
-    title,
-    author,
-  });
-  library
-    .save()
-    .then((data) => {
-      res.status(200).json(books);
-    })
-    .catch((error) => {
-      console.log(error);
-      res
-        .status(501)
-        .json({ message: "An error occurred while adding the book." });
-    });
-};
+// const addBook = async (req, res, next) => {
+//   const { title, author } = req.body;
+//   const library = await Book({
+//     title,
+//     author,
+//   });
+//   library
+//     .save()
+//     .then((data) => {
+//       res.status(200).json(books);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       res
+//         .status(501)
+//         .json({ message: "An error occurred while adding the book." });
+//     });
+// };
 
 exports.searchBooks = searchBooks;
-exports.addBook = addBook;
+// exports.addBook = addBook;
