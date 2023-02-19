@@ -13,8 +13,9 @@ function App() {
   const handleSearch = (query) => {
     // make a GET request to the backend
     axios
-      .get(`${API_URL}/books/search/${query}`)
+      .get(`${API_URL}/search/${query}`)
       .then((result) => {
+        console.log(result);
         setBooks(result.data);
       })
       .catch((error) => {
