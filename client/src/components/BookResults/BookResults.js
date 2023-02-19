@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import {
   ResultContainer,
   Row,
-  CarouselWrapper,
   CardContainer,
   BookCover,
   BookContent,
@@ -12,60 +11,43 @@ import {
 
 function BookResults(props) {
   const rowRef = useRef();
-  const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
-  const baseRowWidth = 1000;
+  // tracks the first group of books on the display
+  const [currentGroup, setCurrentGroup] = useState(0);
 
+  // loops back to the starting group when it reaches the end
   const handlePrevClick = () => {
-    if (currentGroupIndex > 0) {
-      setCurrentGroupIndex(currentGroupIndex - 1);
-    } else {
-      setCurrentGroupIndex(Math.floor(props.books.length / 5) - 1);
-    }
+    const nextIndex = currentGroup - 5;
+    setCurrentGroup(nextIndex < 0 ? props.books.length - 5 : nextIndex);
   };
 
+  // increments the current group by 5 and loops back when it reaches the end
   const handleNextClick = () => {
-    if (currentGroupIndex < Math.floor(props.books.length / 5) - 1) {
-      setCurrentGroupIndex(currentGroupIndex + 1);
-    } else {
-      setCurrentGroupIndex(0);
-    }
+    setCurrentGroup((currentGroup + 5) % props.books.length);
   };
 
-  useEffect(() => {
-    const row = rowRef.current;
-    row.style.transform = `translateX(-${baseRowWidth * currentGroupIndex}px)`;
-  }, [currentGroupIndex]);
-
-  const renderBooks = () => {
-    let bookNodes = [];
-
-    for (let i = 0; i < props.books.length; i++) {
-      bookNodes.push(
-        <CarouselWrapper key={i}>
-          {props.books.slice(i * 5, i * 5 + 5).map((book, index) => (
-            <CardContainer key={index}>
-              <BookCover>
-                {book.thumbnail && (
-                  <img src={`${book.thumbnail}`} alt={book.title} />
-                )}
-              </BookCover>
-            </CardContainer>
-          ))}
-        </CarouselWrapper>
-      );
-    }
-
-    return bookNodes;
-  };
+  // show only 5 books
+  const visibleBooks = props.books.slice(currentGroup, currentGroup + 5);
 
   return (
     <>
       <ResultContainer>
-        <LeftIcon onClick={handlePrevClick} />
-        <Row ref={rowRef} bookCount={props}>
-          {renderBooks()}
-        </Row>
-        <RightIcon onClick={handleNextClick} />
+        {visibleBooks.length > 0 ? (
+          <Row ref={rowRef} currentGroup={currentGroup}>
+            <LeftIcon onClick={handlePrevClick} />
+            {visibleBooks.map((book, index) => (
+              <CardContainer key={index}>
+                <BookCover>
+                  {book.thumbnail && (
+                    <img src={`${book.thumbnail}`} alt={book.title} />
+                  )}
+                </BookCover>
+              </CardContainer>
+            ))}
+            <RightIcon onClick={handleNextClick} />
+          </Row>
+        ) : (
+          <p>Loading books...</p>
+        )}
       </ResultContainer>
     </>
   );

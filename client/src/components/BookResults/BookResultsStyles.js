@@ -11,41 +11,25 @@ export const ResultContainer = styled.section`
 `;
 
 export const Row = styled.div`
-  position: absolute;
+  position: relative;
   bottom: -1rem;
-  /* margin: 0 5%; */
-  width: 1000px;
+  width: fit-content;
   display: flex;
-  background-color: pink;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-end;
   z-index: 10;
-  transition: transform 300ms ease-in-out;
-  transform: translateX(0);
-  /* width: ${(props) => `${props.bookCount * 200}px`}; */
+
+  /* transition: transform 0.5s ease-in-out;
+  transform: ${({ currentGroup }) => `translateX(-${currentGroup * 5}%)`}; */
 `;
 
-export const CarouselWrapper = styled.div`
-  display: flex;
-  /* flex: 0 0 20%; */
-  /* transition: transform 0.3s ease-in-out;
-  transform: translateX(0); */
-  display: flex;
-  flex-direction: row;
-
-  width: 100%;
-  max-width: 1000px;
-
-  padding: 10px;
-
-  background-color: aliceblue;
-`;
+export const CarouselWrapper = styled.div``;
 
 export const CardContainer = styled.div`
-  width: calc(1000px / 5);
+  width: 20%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  flex-shrink: 0;
-  transition: opacity 0.5s ease;
 `;
 
 export const BookCover = styled.div`
@@ -54,26 +38,31 @@ export const BookCover = styled.div`
   img {
     border-radius: 5px;
     width: 150px;
-    object-fit: contain;
-    /* filter: drop-shadow(7px 0px 15px rgba(84, 68, 45, 0.621))
-      drop-shadow(1px 3px 7px rgba(80, 57, 25, 0.427)); */
+    cursor: pointer;
+
+    filter: drop-shadow(4px 0px 5px rgba(84, 68, 45, 0.621))
+      drop-shadow(1px 5px 5px rgba(80, 57, 25, 0.427));
   }
 `;
 
 export const RightIcon = styled(TfiArrowCircleRight)`
   position: absolute;
-  right: 0;
+  top: 50%;
+  right: -5rem;
   font-size: 2rem;
   color: var(--black);
   z-index: 20;
+  cursor: pointer;
 `;
 
 export const LeftIcon = styled(TfiArrowCircleLeft)`
   position: absolute;
-  left: 0;
+  top: 50%;
+  left: -5rem;
   font-size: 2rem;
   color: var(--black);
   z-index: 20;
+  cursor: pointer;
 `;
 
 export const BookContent = styled.div``;
