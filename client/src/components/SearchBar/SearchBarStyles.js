@@ -6,6 +6,7 @@ export const SearchBarContainer = styled.form`
   position: relative;
   display: flex;
   justify-content: center;
+  margin: 1rem 0;
 
   input {
     width: 100%;

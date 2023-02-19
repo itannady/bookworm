@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HeroContainer = styled.header`
   width: 100vw;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;

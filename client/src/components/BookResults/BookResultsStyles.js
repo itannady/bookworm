@@ -8,6 +8,7 @@ export const ResultContainer = styled.section`
   justify-content: center;
   height: 14rem;
   min-height: 14rem;
+  margin-top: 2rem;
 `;
 
 export const Row = styled.div`
@@ -37,7 +38,7 @@ export const BookCover = styled.div`
 
   img {
     border-radius: 5px;
-    width: 150px;
+    width: 170px;
     cursor: pointer;
 
     filter: drop-shadow(4px 0px 5px rgba(84, 68, 45, 0.621))
@@ -47,7 +48,7 @@ export const BookCover = styled.div`
 
 export const RightIcon = styled(TfiArrowCircleRight)`
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: -5rem;
   font-size: 2rem;
   color: var(--black);
@@ -57,7 +58,7 @@ export const RightIcon = styled(TfiArrowCircleRight)`
 
 export const LeftIcon = styled(TfiArrowCircleLeft)`
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: -5rem;
   font-size: 2rem;
   color: var(--black);
