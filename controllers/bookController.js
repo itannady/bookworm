@@ -67,5 +67,22 @@ const addBook = async (req, res) => {
   }
 };
 
+// Delete book from database
+const deleteBook = async (req, res) => {
+  const bookId = req.params.id;
+  try {
+    const book = await Book.findById(bookId);
+    if (!book) {
+      return res.status(404).json({ message: "Book not found" });
+    }
+    await book.remove(book);
+    res.status(202).json(book);
+  } catch (error) {
+    console.error(error);
+    res.status(502).json({ message: "Server error" });
+  }
+};
+
 exports.searchBooks = searchBooks;
 exports.addBook = addBook;
+exports.deleteBook = deleteBook;

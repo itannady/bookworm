@@ -8,4 +8,7 @@ router.get("/search/:query", booksController.searchBooks);
 // Add a new book
 router.post("/library", booksController.addBook);
 
+// Delete book
+router.delete("/delete/:id", booksController.deleteBook);
+
 module.exports = router;

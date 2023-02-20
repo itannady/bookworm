@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiTwotoneDelete } from "react-icons/ai";
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -37,7 +37,18 @@ export const BookList = styled.div`
   margin: 5%;
 `;
 
+export const DeleteIcon = styled(AiTwotoneDelete)`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: gray;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+`;
+
 export const BookCard = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -49,6 +60,10 @@ export const BookCard = styled.div`
 
   &:hover {
     background: #f2f2f2;
+
+    ${DeleteIcon} {
+      display: block;
+    }
   }
 `;
 

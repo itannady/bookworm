@@ -6,7 +6,7 @@ import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import { ShelfImg } from "./components/Shelf/ShelfStyles";
 import Modal from "./components/Modal/Modal";
-import { addBookToList } from "./api";
+import { addBookToList, deleteBook } from "./api";
 import { BookList } from "./components/Modal/ModalStyles";
 
 function App() {
@@ -28,11 +28,25 @@ function App() {
       });
   };
 
+  // add book to list
   const handleAddToList = async (book) => {
     try {
       const newBook = await addBookToList(book);
       setBookList((prevBooks) => [...prevBooks, newBook]);
       console.log(bookList);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // remove book from list
+  const handleDeleteBook = async (bookId) => {
+    try {
+      await deleteBook(bookId);
+      setBookList((prevBookList) =>
+        prevBookList.filter((book) => book.id !== bookId)
+      );
+      console.log(bookId);
     } catch (error) {
       console.error(error);
     }
@@ -51,6 +65,7 @@ function App() {
         isOpen={isModalOpen}
         closeModal={() => setIsModalOpen(false)}
         bookList={bookList}
+        handleDeleteBook={handleDeleteBook}
       />
     </>
   );
