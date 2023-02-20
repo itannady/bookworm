@@ -10,9 +10,9 @@ export const ResultContainer = styled.section`
   width: 100vw;
   display: flex;
   justify-content: center;
-  height: 14rem;
-  min-height: 14rem;
-  margin-top: 2rem;
+  height: 13rem;
+  min-height: 13rem;
+  margin-top: 1.5rem;
 `;
 
 export const Row = styled.div`
@@ -42,7 +42,7 @@ export const BookCover = styled.div`
   width: 100%;
   img {
     border-radius: 5px;
-    width: 170px;
+    width: 10rem;
     cursor: pointer;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
       0 1px 3px 1px rgb(60 64 67 / 15%);

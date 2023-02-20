@@ -5,6 +5,7 @@ export const NavContainer = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem 0;
 `;
 
 export const NavWrapper = styled.nav`
@@ -14,6 +15,10 @@ export const NavWrapper = styled.nav`
   justify-content: space-between;
 `;
 
-export const Logo = styled.div``;
+export const Logo = styled.div`
+  img {
+    width: 10rem;
+  }
+`;
 
 export const Library = styled.div``;

@@ -7,7 +7,7 @@ function Navbar({ openModal }) {
       <NavContainer>
         <NavWrapper>
           <Logo>
-            <h4>LOGO</h4>
+            <img src="/images/logo.png" />
           </Logo>
           <Library>
             <button onClick={openModal}>Library</button>

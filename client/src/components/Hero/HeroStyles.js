@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const HeroContainer = styled.header`
   width: 100vw;
-  height: 50vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const ContentWrapper = styled.header`
-  margin: 2% 5%;
+  margin: 0 5%;
   max-width: 1000px;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ export const ContentWrapper = styled.header`
   align-items: center;
 
   h1,
-  h4 {
+  h3 {
     text-align: center;
   }
 `;

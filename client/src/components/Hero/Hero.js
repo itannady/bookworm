@@ -20,7 +20,7 @@ function Hero(props) {
           <h1>
             Discover your next <br /> favorite book
           </h1>
-          <h4>Enter a book you like and we'll find some new books for you</h4>
+          <h3>Enter a book you like and we'll find some new books for you</h3>
           <SearchBar
             handleSubmit={handleSubmit}
             handleChange={handleChange}
