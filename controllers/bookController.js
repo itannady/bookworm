@@ -4,30 +4,6 @@ const BASE_URL = "https://www.googleapis.com/books/v1/volumes";
 const API_KEY = process.env.API_KEY;
 
 // Search for books
-// const searchBooks = async (req, res, next) => {
-//   const { query } = req.params;
-//   try {
-//     const result = await axios.get(
-//       `${BASE_URL}?q=:${query}&key=${API_KEY}&maxResults=20&printType=books&filter=partial&orderBy=relevance`
-//     );
-//     const books = result.data.items.map((item) => {
-//       const book = item.volumeInfo;
-//       return {
-//         title: book.title,
-//         authors: book.authors,
-//         description: book.description,
-//         thumbnail: book.imageLinks?.thumbnail,
-//       };
-//     });
-//     res.status(200).json(books);
-//   } catch (error) {
-//     console.log(error);
-//     res
-//       .status(500)
-//       .json({ message: "An error occurred while searching for books." });
-//   }
-// };
-
 const searchBooks = async (req, res, next) => {
   const { query } = req.params;
   try {
@@ -42,7 +18,6 @@ const searchBooks = async (req, res, next) => {
           counter * 20
         }&maxResults=20&printType=books&filter=partial`
       );
-
       for (let item of result.data.items) {
         const book = item.volumeInfo;
         const title = book.title.toLowerCase();
@@ -63,7 +38,6 @@ const searchBooks = async (req, res, next) => {
           break;
         }
       }
-
       counter++;
     }
 
@@ -76,25 +50,22 @@ const searchBooks = async (req, res, next) => {
   }
 };
 
-// Add book
-// const addBook = async (req, res, next) => {
-//   const { title, author } = req.body;
-//   const library = await Book({
-//     title,
-//     author,
-//   });
-//   library
-//     .save()
-//     .then((data) => {
-//       res.status(200).json(books);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//       res
-//         .status(501)
-//         .json({ message: "An error occurred while adding the book." });
-//     });
-// };
+// Add book to the database
+const addBook = async (req, res) => {
+  const { title, author, description, thumbnail } = req.body;
+  try {
+    const book = await Book.create({
+      title,
+      author,
+      description,
+      thumbnail,
+    });
+    res.status(201).json(book);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
 
 exports.searchBooks = searchBooks;
-// exports.addBook = addBook;
+exports.addBook = addBook;

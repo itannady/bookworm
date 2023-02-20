@@ -5,9 +5,9 @@ import {
   HeadingContent,
   BookList,
   CloseIcon,
-} from "./LibModalStyles";
+} from "./ModalStyles";
 
-function LibModal({ isOpen, closeModal }) {
+function Modal({ isOpen, closeModal, bookList }) {
   if (!isOpen) {
     return null;
   }
@@ -22,7 +22,11 @@ function LibModal({ isOpen, closeModal }) {
               <h2>Library</h2>
             </HeadingContent>
             <BookList>
-              <h2>Hello</h2>
+              <ul>
+                {bookList.map((book) => (
+                  <li key={book.id}>{book.title}</li>
+                ))}
+              </ul>
             </BookList>
           </ModalContainer>
         </ModalOverlay>
@@ -31,4 +35,4 @@ function LibModal({ isOpen, closeModal }) {
   );
 }
 
-export default LibModal;
+export default Modal;

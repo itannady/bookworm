@@ -16,13 +16,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", bookRoutes);
 
 // Connect to MongoDB
+const URL = process.env.MONGODB_URL;
 mongoose.set("strictQuery", false);
 
 mongoose
-  .connect(process.env.MONGODB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(URL)
   .then(() => console.log("Connected to Database"))
   .then(() => {
     app.listen(PORT, () => {

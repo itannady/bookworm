@@ -10,6 +10,7 @@ export const ModalOverlay = styled.div`
   transition: opacity 0.2s ease;
   opacity: 1;
   overflow-y: hidden;
+  z-index: 1000;
 `;
 
 export const ModalContainer = styled.div`
@@ -19,7 +20,6 @@ export const ModalContainer = styled.div`
   bottom: 0;
   border-radius: 20px 20px 0 0;
   overflow-y: scroll;
-  z-index: 1000;
   background-color: aliceblue;
 `;
 
@@ -29,7 +29,6 @@ export const HeadingContent = styled.div`
 `;
 
 export const BookList = styled.div`
-  background-color: green;
   margin: 5%;
 `;
 

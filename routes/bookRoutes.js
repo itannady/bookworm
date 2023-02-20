@@ -4,6 +4,8 @@ const booksController = require("../controllers/bookController");
 
 // Searching a book
 router.get("/search/:query", booksController.searchBooks);
-// router.post("/", booksController.addBook);
+
+// Add a new book
+router.post("/library", booksController.addBook);
 
 module.exports = router;

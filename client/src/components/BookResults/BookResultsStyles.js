@@ -23,7 +23,7 @@ export const Row = styled.div`
   gap: 2rem;
   justify-content: center;
   align-items: flex-end;
-  z-index: 10;
+  z-index: 1;
 
   /* transition: transform 0.5s ease-in-out;
   transform: ${({ currentGroup }) => `translateX(-${currentGroup * 5}%)`}; */
