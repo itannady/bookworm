@@ -34,15 +34,15 @@ function Modal({ isOpen, closeModal, bookList, handleDeleteBook }) {
             </HeadingContent>
             <BookList>
               {bookList.map((book) => (
-                <BookCard key={book.id}>
+                <BookCard key={book._id}>
                   <DeleteIcon onClick={() => handleDelete(book.title)} />
                   <BookCover>
                     {book.thumbnail && (
                       <img src={`${book.thumbnail}`} alt={book.title} />
                     )}
                   </BookCover>
-                  <p>{book.title}</p>
-                  {book.author && <p> {book.author[0]}</p>}
+                  <p className="title">{book.title}</p>
+                  {book.author && <p> {book.author}</p>}
                 </BookCard>
               ))}
             </BookList>

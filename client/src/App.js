@@ -41,7 +41,6 @@ function App() {
 
   // remove book from list
   const handleDeleteBook = async (bookTitle) => {
-    console.log(bookTitle);
     try {
       await deleteBook(bookTitle);
       setBookList((prevBookList) =>

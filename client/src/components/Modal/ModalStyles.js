@@ -8,12 +8,19 @@ export const ModalOverlay = styled.div`
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
-  transition: opacity 0.2s ease;
   opacity: 1;
   overflow-y: hidden;
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   z-index: 1000;
-`;
 
+  ${({ isOpen }) =>
+    isOpen &&
+    `
+    bottom: 0;
+    transform: translateY(100%);
+  `}
+`;
 export const ModalContainer = styled.div`
   position: absolute;
   width: 100%;
@@ -54,7 +61,7 @@ export const BookCard = styled.div`
   justify-content: flex-end;
   align-items: center;
   border-radius: 20px;
-  padding: 1rem;
+  padding: 2rem 1rem;
   background: white;
 
   &:hover {
@@ -64,9 +71,13 @@ export const BookCard = styled.div`
       display: block;
     }
   }
+  p {
+    margin: 0 1rem;
+  }
 `;
 
 export const BookCover = styled.div`
+  margin-bottom: 1rem;
   img {
     border-radius: 5px;
     width: 120px;
