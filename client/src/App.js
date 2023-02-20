@@ -28,16 +28,13 @@ function App() {
   // library modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
-
   return (
     <>
-      <Navbar handleOpenModal={handleOpenModal} />
+      <Navbar openModal={() => setIsModalOpen(true)} />
       <Hero handleSearch={handleSearch} />
       <BookResults books={books} />
       <ShelfImg />
-      <LibModal isOpen={isModalOpen} handleCloseModal={handleCloseModal} />
+      <LibModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
     </>
   );
 }

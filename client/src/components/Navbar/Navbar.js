@@ -1,27 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavContainer, NavWrapper, Logo, Library } from "./NavbarStyles";
 
-function Navbar(props) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
-
+function Navbar({ openModal }) {
   return (
     <>
       <NavContainer>
         <NavWrapper>
           <Logo>
-            <h4>Bookworm</h4>
+            <h4>LOGO</h4>
           </Logo>
           <Library>
-            <button onClick={toggleModal}>Library</button>
+            <button onClick={openModal}>Library</button>
           </Library>
         </NavWrapper>
       </NavContainer>
     </>
   );
 }
-
 export default Navbar;

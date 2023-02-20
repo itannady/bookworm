@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   ModalOverlay,
   ModalContainer,
@@ -7,19 +7,16 @@ import {
   CloseIcon,
 } from "./LibModalStyles";
 
-function LibModal(props) {
-  const [isOpen, setIsOpen] = useState(false);
+function LibModal({ isOpen, closeModal }) {
+  if (!isOpen) {
+    return null;
+  }
 
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <>
-      <button onClick={toggleModal}>Open</button>
-
       {isOpen && (
         <ModalOverlay>
-          <CloseIcon onClick={toggleModal} />
+          <CloseIcon onClick={closeModal} />
           <ModalContainer>
             <HeadingContent>
               <h2>Library</h2>
