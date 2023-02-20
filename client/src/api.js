@@ -20,9 +20,9 @@ export const addBookToList = async (book) => {
 };
 
 // delete book
-export const deleteBook = async (id) => {
+export const deleteBook = async (bookTitle) => {
   try {
-    const response = await fetch(`${API_URL}/delete/${id}`, {
+    const response = await fetch(`${API_URL}/delete/${bookTitle}`, {
       method: "DELETE",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -30,7 +30,7 @@ export const deleteBook = async (id) => {
       },
     });
     const result = await response.json();
-    return result.message;
+    return result.data;
   } catch (error) {
     console.error(error);
     throw new Error("Failed to delete book");

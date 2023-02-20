@@ -69,13 +69,13 @@ const addBook = async (req, res) => {
 
 // Delete book from database
 const deleteBook = async (req, res) => {
-  const bookId = req.params.id;
   try {
-    const book = await Book.findById(bookId);
+    const bookTitle = req.params.title;
+    const book = await Book.findOne({ title: bookTitle });
     if (!book) {
       return res.status(404).json({ message: "Book not found" });
     }
-    await book.remove(book);
+    await book.remove();
     res.status(202).json(book);
   } catch (error) {
     console.error(error);

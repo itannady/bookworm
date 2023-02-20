@@ -9,6 +9,6 @@ router.get("/search/:query", booksController.searchBooks);
 router.post("/library", booksController.addBook);
 
 // Delete book
-router.delete("/delete/:id", booksController.deleteBook);
+router.delete("/delete/:title", booksController.deleteBook);
 
 module.exports = router;

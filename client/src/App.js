@@ -40,13 +40,13 @@ function App() {
   };
 
   // remove book from list
-  const handleDeleteBook = async (bookId) => {
+  const handleDeleteBook = async (bookTitle) => {
+    console.log(bookTitle);
     try {
-      await deleteBook(bookId);
+      await deleteBook(bookTitle);
       setBookList((prevBookList) =>
-        prevBookList.filter((book) => book.id !== bookId)
+        prevBookList.filter((book) => book.title !== bookTitle)
       );
-      console.log(bookId);
     } catch (error) {
       console.error(error);
     }
