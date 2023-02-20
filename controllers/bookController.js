@@ -56,7 +56,7 @@ const addBook = async (req, res) => {
   try {
     const book = await Book.create({
       title,
-      author,
+      author: [author],
       description,
       thumbnail,
     });

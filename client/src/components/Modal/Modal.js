@@ -4,6 +4,8 @@ import {
   ModalContainer,
   HeadingContent,
   BookList,
+  BookCard,
+  BookCover,
   CloseIcon,
 } from "./ModalStyles";
 
@@ -22,11 +24,17 @@ function Modal({ isOpen, closeModal, bookList }) {
               <h2>Library</h2>
             </HeadingContent>
             <BookList>
-              <ul>
-                {bookList.map((book) => (
-                  <li key={book.id}>{book.title}</li>
-                ))}
-              </ul>
+              {bookList.map((book) => (
+                <BookCard key={book.id}>
+                  <BookCover>
+                    {book.thumbnail && (
+                      <img src={`${book.thumbnail}`} alt={book.title} />
+                    )}
+                  </BookCover>
+                  <p>{book.title}</p>
+                  {book.author && <p> {book.author[0]}</p>}
+                </BookCard>
+              ))}
             </BookList>
           </ModalContainer>
         </ModalOverlay>

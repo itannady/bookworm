@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+
 export const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -20,7 +21,8 @@ export const ModalContainer = styled.div`
   bottom: 0;
   border-radius: 20px 20px 0 0;
   overflow-y: scroll;
-  background-color: aliceblue;
+  overflow-x: hidden;
+  background-color: white;
 `;
 
 export const HeadingContent = styled.div`
@@ -29,7 +31,32 @@ export const HeadingContent = styled.div`
 `;
 
 export const BookList = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2rem;
   margin: 5%;
+`;
+
+export const BookCard = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 20px;
+  padding: 1rem;
+  background: white;
+
+  &:hover {
+    background: #f2f2f2;
+  }
+`;
+
+export const BookCover = styled.div`
+  img {
+    border-radius: 5px;
+    width: 120px;
+  }
 `;
 
 export const CloseIcon = styled(AiOutlineCloseCircle)`
