@@ -26,7 +26,6 @@ export const ModalContainer = styled.div`
 `;
 
 export const HeadingContent = styled.div`
-  background-color: pink;
   margin: 5%;
 `;
 

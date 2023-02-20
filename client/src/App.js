@@ -1,13 +1,12 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import BookResults from "./components/BookResults/BookResults";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import { ShelfImg } from "./components/Shelf/ShelfStyles";
 import Modal from "./components/Modal/Modal";
-import { addBookToList, deleteBook } from "./api";
-import { BookList } from "./components/Modal/ModalStyles";
+import { addBookToList, deleteBook } from "./bookServices";
 
 function App() {
   const API_URL = "http://localhost:5050";
@@ -15,12 +14,14 @@ function App() {
   const [books, setBooks] = useState([]);
   const [bookList, setBookList] = useState([]);
 
+  // library modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleSearch = (query) => {
     // make a GET request to the backend
     axios
       .get(`${API_URL}/search/${query}`)
       .then((result) => {
-        console.log(result);
         setBooks(result.data);
       })
       .catch((error) => {
@@ -33,7 +34,6 @@ function App() {
     try {
       const newBook = await addBookToList(book);
       setBookList((prevBooks) => [...prevBooks, newBook]);
-      console.log(bookList);
     } catch (error) {
       console.error(error);
     }
@@ -51,9 +51,6 @@ function App() {
       console.error(error);
     }
   };
-
-  // library modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>

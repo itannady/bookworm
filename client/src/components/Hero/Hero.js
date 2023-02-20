@@ -13,6 +13,7 @@ function Hero(props) {
     event.preventDefault();
     props.handleSearch(query);
   };
+
   return (
     <>
       <HeroContainer>

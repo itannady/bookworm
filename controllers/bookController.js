@@ -3,7 +3,7 @@ const Book = require("../model/Book");
 const BASE_URL = "https://www.googleapis.com/books/v1/volumes";
 const API_KEY = process.env.API_KEY;
 
-// Search for books
+// search for books
 const searchBooks = async (req, res, next) => {
   const { query } = req.params;
   try {
@@ -50,7 +50,7 @@ const searchBooks = async (req, res, next) => {
   }
 };
 
-// Add book to the database
+// add book to the database
 const addBook = async (req, res) => {
   const { title, author, description, thumbnail } = req.body;
   try {
@@ -67,7 +67,7 @@ const addBook = async (req, res) => {
   }
 };
 
-// Delete book from database
+// delete book from database
 const deleteBook = async (req, res) => {
   try {
     const bookTitle = req.params.title;

@@ -4,7 +4,6 @@ import {
   Row,
   CardContainer,
   BookCover,
-  BookContent,
   BookmarkTag,
   LeftIcon,
   RightIcon,
@@ -13,6 +12,7 @@ import {
 
 function BookResults({ books, onAddToList }) {
   const rowRef = useRef();
+
   // tracks the first group of books on the display
   const [currentGroup, setCurrentGroup] = useState(0);
 
@@ -33,7 +33,7 @@ function BookResults({ books, onAddToList }) {
   return (
     <>
       <ResultContainer>
-        {visibleBooks.length > 0 ? (
+        {visibleBooks.length > 0 && (
           <Row ref={rowRef} currentGroup={currentGroup}>
             <LeftIcon onClick={handlePrevClick} />
             {visibleBooks.map((book, index) => (
@@ -53,9 +53,8 @@ function BookResults({ books, onAddToList }) {
             ))}
             <RightIcon onClick={handleNextClick} />
           </Row>
-        ) : (
-          <p>Loading books...</p>
         )}
+        {!visibleBooks.length && <p>Loading books...</p>}
       </ResultContainer>
     </>
   );

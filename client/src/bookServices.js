@@ -1,18 +1,17 @@
+import axios from "axios";
 const API_URL = "http://localhost:5050";
 
 // add book
 export const addBookToList = async (book) => {
   try {
-    const response = await fetch(`${API_URL}/library`, {
-      method: "POST",
+    const response = await axios.post(`${API_URL}/library`, book, {
       headers: {
         Accept: "application/json, text/plain, */*",
         "Content-type": "application/json",
       },
       body: JSON.stringify(book),
     });
-    const newBook = await response.json();
-    return newBook;
+    return response.data;
   } catch (error) {
     console.error(error);
     throw new Error("Failed to add book to list");
@@ -22,15 +21,17 @@ export const addBookToList = async (book) => {
 // delete book
 export const deleteBook = async (bookTitle) => {
   try {
-    const response = await fetch(`${API_URL}/delete/${bookTitle}`, {
-      method: "DELETE",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-type": "application/json",
-      },
-    });
-    const result = await response.json();
-    return result.data;
+    const response = await axios.delete(
+      `${API_URL}/delete/${bookTitle}`,
+      bookTitle,
+      {
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-type": "application/json",
+        },
+      }
+    );
+    return response.data;
   } catch (error) {
     console.error(error);
     throw new Error("Failed to delete book");

@@ -20,16 +20,13 @@ export const Row = styled.div`
   bottom: -1rem;
   width: fit-content;
   display: flex;
-  gap: 2rem;
   justify-content: center;
   align-items: flex-end;
+  gap: 2rem;
   z-index: 1;
-
   /* transition: transform 0.5s ease-in-out;
   transform: ${({ currentGroup }) => `translateX(-${currentGroup * 5}%)`}; */
 `;
-
-export const CarouselWrapper = styled.div``;
 
 export const CardContainer = styled.div`
   width: 20%;
@@ -40,6 +37,7 @@ export const CardContainer = styled.div`
 export const BookCover = styled.div`
   position: relative;
   width: 100%;
+
   img {
     border-radius: 5px;
     width: 10rem;
@@ -70,8 +68,6 @@ export const LeftIcon = styled(TfiArrowCircleLeft)`
   z-index: 20;
   cursor: pointer;
 `;
-
-export const BookContent = styled.div``;
 
 export const BookmarkTag = styled.div`
   display: none;

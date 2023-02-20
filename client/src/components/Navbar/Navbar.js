@@ -7,7 +7,7 @@ function Navbar({ openModal }) {
       <NavContainer>
         <NavWrapper>
           <Logo>
-            <img src="/images/logo.png" />
+            <img src="/images/logo.png" alt="Bookworm logo" />
           </Logo>
           <Library>
             <button onClick={openModal}>Library</button>
