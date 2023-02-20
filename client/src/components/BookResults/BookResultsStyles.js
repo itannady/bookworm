@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import { TfiArrowCircleLeft, TfiArrowCircleRight } from "react-icons/tfi";
+import {
+  TfiBookmark,
+  TfiArrowCircleLeft,
+  TfiArrowCircleRight,
+} from "react-icons/tfi";
 
 export const ResultContainer = styled.section`
   position: relative;
@@ -34,8 +38,8 @@ export const CardContainer = styled.div`
 `;
 
 export const BookCover = styled.div`
+  position: relative;
   width: 100%;
-
   img {
     border-radius: 5px;
     width: 170px;
@@ -68,3 +72,25 @@ export const LeftIcon = styled(TfiArrowCircleLeft)`
 `;
 
 export const BookContent = styled.div``;
+
+export const BookmarkTag = styled.div`
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  padding: 1rem 0;
+  cursor: pointer;
+  span {
+    font-weight: 600;
+    color: var(--ecru);
+  }
+  ${BookCover}:hover & {
+    display: block;
+  }
+`;
+
+export const BookmarkIcon = styled(TfiBookmark)`
+  font-size: 1rem;
+  color: var(--ecru);
+`;

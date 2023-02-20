@@ -5,8 +5,10 @@ import {
   CardContainer,
   BookCover,
   BookContent,
+  BookmarkTag,
   LeftIcon,
   RightIcon,
+  BookmarkIcon,
 } from "./BookResultsStyles";
 
 function BookResults(props) {
@@ -40,6 +42,12 @@ function BookResults(props) {
                   {book.thumbnail && (
                     <img src={`${book.thumbnail}`} alt={book.title} />
                   )}
+                  <BookmarkTag className="bookmarkTag">
+                    <span>
+                      <BookmarkIcon />
+                      Add to Library
+                    </span>
+                  </BookmarkTag>
                 </BookCover>
               </CardContainer>
             ))}
