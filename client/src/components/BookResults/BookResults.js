@@ -45,7 +45,6 @@ function BookResults({ books, onAddToList }) {
                   <BookmarkTag onClick={() => onAddToList(book)}>
                     <span>
                       <BookmarkIcon />
-                      Add to Library
                     </span>
                   </BookmarkTag>
                 </BookCover>
