@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { FiSearch } from "react-icons/fi";
 
 export const SearchBarContainer = styled.form`
-  width: 80%;
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   margin: 1rem 0;
+  gap: 1rem;
 
   input {
     width: 100%;

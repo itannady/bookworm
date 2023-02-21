@@ -7,6 +7,7 @@
   --ecru: #f4f0e6;
   --blue: #b9cdd2;
   --brown: #ba885c;
+  --btnHover: #cde2e8;
 }
 body {
   margin: 0;
@@ -73,4 +74,9 @@ button {
   font-weight: 600;
   color: var(--black);
   cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--btnHover);
+  transition: all 0.1s ease-in;
 }

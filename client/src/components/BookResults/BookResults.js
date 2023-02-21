@@ -54,7 +54,7 @@ function BookResults({ books, onAddToList }) {
             <RightIcon onClick={handleNextClick} />
           </Row>
         )}
-        {!visibleBooks.length && <p>Loading books...</p>}
+        {!visibleBooks.length && <div></div>}
       </ResultContainer>
     </>
   );
