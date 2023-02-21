@@ -1,5 +1,8 @@
 # Bookworm (Book App v1.0)
 
+![bookwormDemo](https://user-images.githubusercontent.com/93556334/220473537-84c7829c-0f4f-48cd-b520-483fe73cffd3.gif)
+
+
 This is the first version (MVP) of a full-stack web application built with the MERN stack (MongoDB, Express, React, and Node.js) that allows users to search for and save books using Google's Book API.
 
 ## Features
