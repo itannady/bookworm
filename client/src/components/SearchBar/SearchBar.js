@@ -12,7 +12,9 @@ function SearchBar(props) {
           value={props.query}
           onChange={props.handleChange}
         ></input>
-        <button type="submit">Search</button>
+        <button className="searchBtn" type="submit">
+          Search
+        </button>
       </SearchBarContainer>
     </>
   );
