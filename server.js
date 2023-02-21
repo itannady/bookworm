@@ -13,16 +13,14 @@ const bookRoutes = require("./routes/bookRoutes");
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use("/books", bookRoutes);
+app.use("/", bookRoutes);
 
 // Connect to MongoDB
+const URL = process.env.MONGODB_URL;
 mongoose.set("strictQuery", false);
 
 mongoose
-  .connect(process.env.MONGODB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(URL)
   .then(() => console.log("Connected to Database"))
   .then(() => {
     app.listen(PORT, () => {
@@ -30,30 +28,3 @@ mongoose
     });
   })
   .catch((err) => console.log(err));
-
-// API calls
-// app.get("/api/search/:query", async (req, res) => {
-//   try {
-//     const response = await axios.get(
-//       `https://www.googleapis.com/books/v1/volumes?q=${req.params.query}&key=${API_KEY}`
-//     );
-//     const books = response.data.items.map((item) => {
-//       const book = new Book({
-//         title: item.volumeInfo.title,
-//         author: item.volumeInfo.authors
-//           ? item.volumeInfo.authors.join(", ")
-//           : "Unknown",
-//         description: item.volumeInfo.description,
-//         publishedDate: item.volumeInfo.publishedDate,
-//         imageLinks: item.volumeInfo.imageLinks,
-//       });
-//       return book;
-//     });
-//     res.json(books);
-//   } catch (error) {
-//     console.log(error);
-//     res
-//       .status(500)
-//       .json({ message: "An error occurred while searching for books." });
-//   }
-// });
