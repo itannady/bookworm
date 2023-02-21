@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AiOutlineCloseCircle, AiTwotoneDelete } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiFillDelete } from "react-icons/ai";
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -40,14 +40,14 @@ export const BookList = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 2rem;
-  margin: 5%;
+  margin: 0 5%;
 `;
 
-export const DeleteIcon = styled(AiTwotoneDelete)`
+export const DeleteIcon = styled(AiFillDelete)`
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: gray;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: var(--ecru);
   cursor: pointer;
   font-size: 1.5rem;
   display: none;
@@ -60,8 +60,8 @@ export const BookCard = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  border-radius: 20px;
-  padding: 2rem 1rem;
+  border-radius: 10px;
+  padding: 1rem 1rem;
   background: white;
 
   &:hover {
@@ -70,6 +70,21 @@ export const BookCard = styled.div`
     ${DeleteIcon} {
       display: block;
     }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 3rem;
+      background: linear-gradient(
+        180deg,
+        rgba(37, 50, 64, 0.4) 0%,
+        rgba(69, 76, 84, 0.23125) 48.96%,
+        rgba(112, 112, 112, 0) 100%
+      );
+      border-radius: 20px 20px 0px 0px;
+    }
   }
   p {
     margin: 0 1rem;
@@ -77,11 +92,20 @@ export const BookCard = styled.div`
 `;
 
 export const BookCover = styled.div`
+  height: 100%;
   margin-bottom: 1rem;
+
   img {
     border-radius: 5px;
-    width: 120px;
+    width: 140px;
   }
+`;
+
+export const BookContent = styled.div`
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const CloseIcon = styled(AiOutlineCloseCircle)`

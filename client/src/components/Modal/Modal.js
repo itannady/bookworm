@@ -6,6 +6,7 @@ import {
   BookList,
   BookCard,
   BookCover,
+  BookContent,
   CloseIcon,
   DeleteIcon,
 } from "./ModalStyles";
@@ -41,8 +42,10 @@ function Modal({ isOpen, closeModal, bookList, handleDeleteBook }) {
                       <img src={`${book.thumbnail}`} alt={book.title} />
                     )}
                   </BookCover>
-                  <p className="title">{book.title}</p>
-                  {book.author && <p> {book.author}</p>}
+                  <BookContent>
+                    <p className="title">{book.title}</p>
+                    {book.author && <p> {book.author}</p>}
+                  </BookContent>
                 </BookCard>
               ))}
             </BookList>

@@ -13,7 +13,7 @@ export const SearchBarContainer = styled.form`
     width: 100%;
     border: 1px solid #d8d8d8;
     padding: 16px 37px;
-    border-radius: 20px;
+    border-radius: 12px;
   }
 `;
 

@@ -10,7 +10,9 @@ function Navbar({ openModal }) {
             <img src="/images/logo.png" alt="Bookworm logo" />
           </Logo>
           <Library>
-            <button onClick={openModal}>Library</button>
+            <button className="libraryBtn" onClick={openModal}>
+              Library
+            </button>
           </Library>
         </NavWrapper>
       </NavContainer>

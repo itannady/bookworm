@@ -7,26 +7,22 @@ import {
   BookmarkTag,
   LeftIcon,
   RightIcon,
-  BookmarkIcon,
+  AddBookmarkIcon,
 } from "./BookResultsStyles";
 
 function BookResults({ books, onAddToList }) {
   const rowRef = useRef();
-
-  // tracks the first group of books on the display
+  // tracks books on the display
   const [currentGroup, setCurrentGroup] = useState(0);
-
   // loops back to the starting group when it reaches the end
   const handlePrevClick = () => {
     const nextIndex = currentGroup - 5;
     setCurrentGroup(nextIndex < 0 ? books.length - 5 : nextIndex);
   };
-
   // increments the current group by 5 and loops back when it reaches the end
   const handleNextClick = () => {
     setCurrentGroup((currentGroup + 5) % books.length);
   };
-
   // show only 5 books
   const visibleBooks = books.slice(currentGroup, currentGroup + 5);
 
@@ -44,7 +40,7 @@ function BookResults({ books, onAddToList }) {
                   )}
                   <BookmarkTag onClick={() => onAddToList(book)}>
                     <span>
-                      <BookmarkIcon />
+                      <AddBookmarkIcon />
                     </span>
                   </BookmarkTag>
                 </BookCover>
