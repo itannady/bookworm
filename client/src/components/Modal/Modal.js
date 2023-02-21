@@ -44,7 +44,9 @@ function Modal({ isOpen, closeModal, bookList, handleDeleteBook }) {
                   </BookCover>
                   <BookContent>
                     <p className="title">{book.title}</p>
-                    {book.author && <p> {book.author}</p>}
+                    {book.authors[0] && (
+                      <p className="author"> {book.authors[0]}</p>
+                    )}
                   </BookContent>
                 </BookCard>
               ))}

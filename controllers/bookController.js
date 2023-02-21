@@ -52,11 +52,11 @@ const searchBooks = async (req, res, next) => {
 
 // add book to the database
 const addBook = async (req, res) => {
-  const { title, author, description, thumbnail } = req.body;
+  const { title, authors, description, thumbnail } = req.body;
   try {
     const book = await Book.create({
       title,
-      author: [author],
+      authors,
       description,
       thumbnail,
     });

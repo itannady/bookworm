@@ -55,6 +55,7 @@ p {
 }
 
 .author {
+  line-height: 2;
   color: gray;
   margin-top: 0.5rem;
 }

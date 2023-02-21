@@ -24,7 +24,7 @@ export const ModalOverlay = styled.div`
 export const ModalContainer = styled.div`
   position: absolute;
   width: 100%;
-  height: calc(100vh - 10%);
+  height: calc(100vh - 4rem);
   bottom: 0;
   border-radius: 20px 20px 0 0;
   overflow-y: scroll;
