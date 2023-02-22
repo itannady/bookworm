@@ -8,13 +8,6 @@ export const SearchBarContainer = styled.form`
   justify-content: center;
   margin: 1rem 0;
   gap: 1rem;
-
-  input {
-    width: 100%;
-    padding: 16px 37px;
-    border: none;
-    border-radius: 12px;
-  }
 `;
 
 export const SearchIcon = styled(FiSearch)`
