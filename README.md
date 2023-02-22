@@ -9,7 +9,7 @@ This is the first version (MVP) of a full-stack web application built with the M
 
  - Search for books by title or author using Google's Book API
 - View recoommended books results
-- Save books to a "Libary" (reading list) which is saved on MongoDB database
+- Save books to a "Library" (reading list) which is saved on MongoDB database
 - View saved books and remove them from the list/database
 
 ## Future Updates
