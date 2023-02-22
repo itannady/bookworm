@@ -7,6 +7,7 @@
   --ecru: #f4f0e6;
   --blue: #b9cdd2;
   --brown: #ba885c;
+  --gray: #b1b1b1;
   --btnHover: #cde2e8;
 }
 body {
@@ -62,17 +63,19 @@ p {
 
 input {
   font-family: "Manrope", sans-serif;
-  color: var(--black);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray);
 }
 
 .searchBtn {
   border: none;
   background-color: var(--blue);
   border-radius: 12px;
-  padding: 8px 16px;
+  padding: 12px 16px;
   font-family: "Manrope", sans-serif;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--black);
   cursor: pointer;
 }
@@ -83,13 +86,13 @@ input {
 }
 
 .libraryBtn {
-  padding: 8px 16px;
+  padding: 12px 16px;
   border-radius: 12px;
   background-color: transparent;
-  border: 3px solid var(--brown);
+  border: 2px solid var(--brown);
   font-family: "Manrope", sans-serif;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--black);
   cursor: pointer;
 }

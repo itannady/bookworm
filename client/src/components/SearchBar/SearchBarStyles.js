@@ -11,8 +11,8 @@ export const SearchBarContainer = styled.form`
 
   input {
     width: 100%;
-    border: 1px solid #d8d8d8;
     padding: 16px 37px;
+    border: none;
     border-radius: 12px;
   }
 `;
@@ -21,5 +21,5 @@ export const SearchIcon = styled(FiSearch)`
   position: absolute;
   top: 33%;
   left: 16px;
-  color: gray;
+  color: var(--gray);
 `;
