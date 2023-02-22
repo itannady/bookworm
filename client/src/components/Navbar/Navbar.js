@@ -1,5 +1,6 @@
 import React from "react";
 import { NavContainer, NavWrapper, Logo, Library } from "./NavbarStyles";
+import { SecondaryBtn } from "../Buttons/ButtonStyles";
 
 function Navbar({ openModal }) {
   return (
@@ -10,9 +11,9 @@ function Navbar({ openModal }) {
             <img src="/images/logo.png" alt="Bookworm logo" />
           </Logo>
           <Library>
-            <button className="libraryBtn" onClick={openModal}>
+            <SecondaryBtn className="libraryBtn" onClick={openModal}>
               Library
-            </button>
+            </SecondaryBtn>
           </Library>
         </NavWrapper>
       </NavContainer>
