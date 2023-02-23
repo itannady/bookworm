@@ -55,7 +55,11 @@ function App() {
     <>
       <Navbar openModal={() => setIsModalOpen(true)} />
       <Hero handleSearch={handleSearch} />
-      <BookResults books={books} onAddToList={handleAddToList} />
+      <BookResults
+        books={books}
+        onAddToList={handleAddToList}
+        handleDeleteBook={handleDeleteBook}
+      />
       <ShelfImg />
       <Modal
         isOpen={isModalOpen}

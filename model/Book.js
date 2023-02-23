@@ -31,6 +31,9 @@ const bookSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  isbn: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Book", bookSchema);
