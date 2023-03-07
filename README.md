@@ -12,17 +12,6 @@ This is the first version (MVP) of a full-stack web application built with the M
 - Save books to a "Library" (reading list) which is saved on MongoDB database
 - View saved books and remove them from the list/database
 
-## Future Updates
-
-In the next version of this app, I plan on adding the following fatures
-:
-
- - User logins to ensure that each user can only view and modify their own saved books
- - Improved search functionality, including filtering by category and sorting by relevance or rating
- - Pagination for search results and saved books to improve performance and user experience
- - Book recommendations based on a user's preference
- - Option to add notes or reviews for saved books
-
 
 ## Technologies
 
